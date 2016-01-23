@@ -56,7 +56,6 @@ angular.module('controllers')
           $state.go('tab.profile');
         }
         else {
-
           $scope.user.email = "";
           $scope.user.password = "";
           $scope.error = true;

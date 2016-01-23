@@ -14,11 +14,47 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+$main: #1abc9c !default;
 
+$calm:                            #1abc9c !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 $balanced:                        #1abc9c !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
+@import "partials/_login";
 
+
+.common-input {
+  background-color: transparent;
+  border-bottom: 1px #EEEEEE !important;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  border-style: solid !important;
+  color: white !important;
+  @include placeholder(#EEEEEE);
+  width: 100%;
+  font-size: 1.2em !important;
+
+  &:focus {
+    border-bottom: 2px white !important;
+    border-style: solid !important;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+  }
+}
+
+.background {
+  background-color: $main;
+  border-top: solid white;
+  border-radius: 0px;
+  height:100%;
+}
+
+.help-message {
+  text-align: center;
+  color: white;
+}

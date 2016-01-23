@@ -1,11 +1,11 @@
-<ion-view class="background">
+<ion-view class="background" view-title="Login">
   <ion-content class="common-content-form">
     <div class="register-div">
       <form name="userForm" ng-submit="login(userForm.$valid,user)" novalidate>
         <div>
           <div class="row">
             <div class="col">
-              <input class="common-input" type="email" name="input" ng-model="user.email" spellcheck="false" autocorrect="off" autocomplete="off"  placeholder="Email" required/>
+              <input class="common-input" type="text" name="input" ng-model="user.email" spellcheck="false" autocorrect="off" autocomplete="off"  placeholder="Username" required/>
             </div>
           </div>
           <div class="row">
@@ -26,7 +26,7 @@
           </div>
           <div class="forgot-password-div">
             <a class="white-a" ng-click="register()">
-              Sign Up for YayONay
+              Sign Up for OneJob
             </a>
           </div>
           <div class="forgot-password-div">
@@ -37,6 +37,5 @@
         </div>
       </form>
     </div>
-
   </ion-content>
 </ion-view>

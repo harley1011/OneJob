@@ -5,9 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in serviceModule.js
 // 'starter.controllers' is found in controllerModule.js
-angular.module('starter', ['ionic', 'controllers', 'services'])
+angular.module('starter', ['ionic', 'services', 'controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,6 +19,13 @@ angular.module('starter', ['ionic', 'controllers', 'services'])
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+    }
+  });
+
+  $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams, $timeout) {
+    if (toState.authenticate && !authorizeService.isLoggedIn()) {
+      event.preventDefault();
+      $state.transitionTo('login');
     }
   });
 })
@@ -41,9 +48,22 @@ angular.module('starter', ['ionic', 'controllers', 'services'])
 
     .state('register', {
       url: '/register',
-      templateUrl: 'templates/register.html',
+      templateUrl: 'templates/register-name.html',
       controller: 'registerCtrl'
     })
+
+    .state('registerEmail', {
+      url: '/registerEmail',
+      templateUrl: 'templates/register-email.html',
+      controller: 'registerCtrl'
+    })
+
+    .state('registerPassword', {
+      url: '/registerPassword',
+      templateUrl: 'templates/register-password.html',
+      controller: 'registerCtrl'
+    })
+
 
     .state('tab', {
     url: '/tab',

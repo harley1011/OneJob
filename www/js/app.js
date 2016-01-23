@@ -41,9 +41,28 @@ angular.module('starter', ['ionic', 'controllers', 'services'])
 
     .state('register', {
       url: '/register',
-      templateUrl: 'templates/register.html',
+      templateUrl: 'templates/register-name.html',
       controller: 'registerCtrl'
     })
+
+    .state('registerEmail', {
+      url: '/registerEmail',
+      templateUrl: 'templates/register-email.html',
+      controller: 'registerCtrl'
+    })
+
+    .state('registerPhone', {
+      url: '/registerPhone',
+      templateUrl: 'templates/register-phone.html',
+      controller: 'registerCtrl'
+    })
+
+    .state('registerPassword', {
+      url: '/registerPassword',
+      templateUrl: 'templates/register-password.html',
+      controller: 'registerCtrl'
+    })
+
 
     .state('tab', {
     url: '/tab',

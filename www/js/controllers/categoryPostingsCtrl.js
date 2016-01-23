@@ -1,20 +1,20 @@
 angular.module('controllers')
 
-  .controller('postingsCtrl', function ($scope, $state, $ionicSlideBoxDelegate) {
+  .controller('postingsCtrl', function ($scope, $ionicSlideBoxDelegate) {
 
     $scope.jobePost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
     $scope.jobberPost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
     $scope.categories = ['Childcare', 'Driving', 'Moving', 'Heavy Lifting', 'Yard Work', 'Odd Jobs', 'Errands']
 
-    $scope.detailPage = function(categorie){
-      console.log(categorie);
-      $state.go('tab.categoryPostings');
+    $scope.detailPage = function(category){
+      console.log(category);
     }
 
     $scope.switchSlide = function(index){
       if (index == 1)
       {
-        $ionicSlideBoxDelegate.slide(1)
+        $ionicSlideBoxDelegate.slide(1);
+        $scope.secondaryButtonTitle = " Create";
       }
       else {
         $ionicSlideBoxDelegate.slide(0);

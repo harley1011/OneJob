@@ -1,0 +1,15 @@
+<ion-view view-title="Postings">
+  <ion-nav-buttons side="secondary">
+    <i class="button icon-left button-clear"
+       ng-click="secondaryButtonAction()"> {{secondaryButtonTitle}}</i>
+  </ion-nav-buttons>
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="post in postings" class="item-avatar" type="item-text-wrap" ng-click="detailPage(category)" >
+        <h2>{{post.title}}</h2>
+        <p>{{post.detail}}</p>
+
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

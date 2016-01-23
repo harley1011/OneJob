@@ -14,9 +14,9 @@
       <ion-slide>
         <div class="list">
           <ion-list>
-            <ion-item
-                      ng-repeat="categorie in categories" type="item-text-wrap">
-              <h2>{{categorie}}</h2>
+            <ion-item ng-repeat="category in categories" class="item-icon-right" type="item-text-wrap" ng-click="detailPage(category)" >
+              <h2>{{category}}</h2>
+              <i class="icon ion-chevron-right" href=""></i>
             </ion-item>
           </ion-list>
         </div>

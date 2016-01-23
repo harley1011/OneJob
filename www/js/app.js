@@ -90,7 +90,7 @@ angular.module('starter', ['ionic', 'services', 'controllers'])
         }
       }
     })
-  
+
 .state('tab.feed', {
       url: '/feed',
       views: {
@@ -109,7 +109,17 @@ angular.module('starter', ['ionic', 'services', 'controllers'])
         }
       }
     })
-    
+
+    .state('tab.categoryPostings', {
+      url: '/categoryPostings',
+      views: {
+        'tab-posting': {
+          templateUrl: 'templates/tab-category-posting.html',
+          controller: 'categoryPostingsCtrl'
+        }
+      }
+    })
+
     .state('tab.favorites', {
       url: '/favorites',
       views: {

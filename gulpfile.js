@@ -67,6 +67,8 @@ gulp.task('directives', function (done) {
 
 gulp.task('watch', function() {
   gulp.watch(paths.sass, ['sass']);
+  gulp.watch(paths.controllers, ['controllers']);
+  gulp.watch(paths.services, ['services']);
 });
 
 gulp.task('install', ['git-check'], function() {

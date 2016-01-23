@@ -17,7 +17,7 @@ var paths = {
   directives: ['./www/js/directives/*.js']
 };
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'controllers', 'services', 'directives']);
 
 gulp.task('sass', function(done) {
   gulp.src('./scss/ionic.app.scss')

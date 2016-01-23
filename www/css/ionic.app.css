@@ -9807,6 +9807,10 @@ a.button {
   border-radius: 0px;
   height: 100%; }
 
+.item-detail {
+  overflow: visible !important;
+  white-space: normal !important; }
+
 .help-message {
   text-align: center;
   color: white; }
@@ -9815,4 +9819,6 @@ a.button {
   background-color: #1abc9c;
   border-radius: 10px;
   font-size: 10px;
-  padding: 5px; }
+  padding: 5px;
+  margin-right: 2px;
+  font-weight: bold; }

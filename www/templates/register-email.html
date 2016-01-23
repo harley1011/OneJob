@@ -1,0 +1,31 @@
+<ion-view class="background" view-title="Register">
+    <ion-content class="common-content-form">
+        <div class="register-div">
+            <form name="userForm"  novalidate>
+            <div class="help-message-div">
+                <p class="help-message">Your username and email will be used to access your account and will be used so friends can find you</p>
+            </div>
+            <div>
+                <p ng-show="error" class="error-message">{{errorMessage}}</p>
+            </div>
+                <div class="row">
+                    <div class="col">
+                        <input class="common-input" type="text" name="username" ng-model="user.username" placeholder="Username" required/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input class="common-input" type="email" name="email" ng-model="user.email" placeholder="Email" required/>
+                    </div>
+                </div>
+            <div>
+                <button type="submit" class="button  button-block button-light"
+                        ng-disabled="userForm.$invalid" ng-click="nextPassword()">
+                    Next
+                </button>
+            </div>
+            </form>
+        </div>
+
+    </ion-content>
+</ion-view>

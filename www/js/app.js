@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllerModule.js
 angular.module('starter', ['ionic', 'services', 'controllers'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $rootScope) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -19,6 +19,13 @@ angular.module('starter', ['ionic', 'services', 'controllers'])
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
+    }
+  });
+
+  $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams, $timeout) {
+    if (toState.authenticate && !authorizeService.isLoggedIn()) {
+      event.preventDefault();
+      $state.transitionTo('login');
     }
   });
 })

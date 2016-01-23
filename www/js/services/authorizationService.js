@@ -16,4 +16,14 @@ angular.module('services').service(
         }
       });
     }
+
+    this.isLoggedIn = function (callback)
+    {
+      var currentUser = Parse.User.current();
+      if (currentUser) {
+        callback({success: true})
+      } else {
+        callback({success: false});
+      }
+    }
   });

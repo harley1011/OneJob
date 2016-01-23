@@ -1,5 +1,5 @@
-angular.module('services').service (
-    'registrationService', function () {
+angular.module('services')
+  .service('registrationService', function () {
     Parse.initialize("WNMS58WrCeFRP5GDL43J9EPtPaJuMUd7AsygsGlH", "B3M0Urq3fJtw7BoeW0zztFK1uA243PpdugTyfKMK");
 
     this.signUp = function (userName, email, firstName, lastName, password) {
@@ -22,4 +22,4 @@ angular.module('services').service (
 
       });
     }
-    });
+  })

@@ -1,5 +1,5 @@
 angular.module('controllers')
-  .controller('registerCtrl', function ($scope, $state, registrationService, $ionicLoading) {
+  .controller('registerCtrl', function ($scope, registrationService) {
     $scope.user =
     {
       email: "",

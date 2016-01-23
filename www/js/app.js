@@ -134,7 +134,7 @@ angular.module('starter', ['ionic', 'services', 'controllers', 'ion-autocomplete
       url: '/favorites',
       views: {
         'tab-favorites': {
-          templateUrl: 'templates/tab-favorites.html',
+          templateUrl: 'templates/tab-profile-detailed.html',
           controller: 'favoritesCtrl'
         }
       }

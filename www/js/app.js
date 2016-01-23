@@ -48,16 +48,6 @@ angular.module('starter', ['ionic', 'controllers', 'services'])
       }
     })
 
-    .state('tab.profile', {
-      url: '/profile',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-profile.html',
-          controller: 'profileCtrl'
-        }
-      }
-    })
-
     .state('tab.postings', {
       url: '/postings',
       views: {

@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in serviceModule.js
 // 'starter.controllers' is found in controllerModule.js
-angular.module('starter', ['ionic', 'controllers', 'services'])
+angular.module('starter', ['ionic', 'services', 'controllers'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -48,12 +48,6 @@ angular.module('starter', ['ionic', 'controllers', 'services'])
     .state('registerEmail', {
       url: '/registerEmail',
       templateUrl: 'templates/register-email.html',
-      controller: 'registerCtrl'
-    })
-
-    .state('registerPhone', {
-      url: '/registerPhone',
-      templateUrl: 'templates/register-phone.html',
       controller: 'registerCtrl'
     })
 

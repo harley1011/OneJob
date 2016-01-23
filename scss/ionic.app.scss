@@ -14,7 +14,9 @@ $assertive:                       #ef473a !default;
 $royal:                           #886aea !default;
 $dark:                            #444 !default;
 */
+$main: #1abc9c !default;
 
+$calm:                            #1abc9c !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
@@ -42,4 +44,16 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
     -moz-border-radius: 0px;
     border-radius: 0px;
   }
+}
+
+.background {
+  background-color: $main;
+  border-top: solid white;
+  border-radius: 0px;
+  height:100%;
+}
+
+.help-message {
+  text-align: center;
+  color: white;
 }

@@ -1,8 +1,8 @@
-Parse.initialize("WNMS58WrCeFRP5GDL43J9EPtPaJuMUd7AsygsGlH", "B3M0Urq3fJtw7BoeW0zztFK1uA243PpdugTyfKMK");
-
 angular.module('services', []).service (
     'registrationService', function (userName, email, firstName, lastName, password) {
-        var user = new Parse.User();
+    Parse.initialize("WNMS58WrCeFRP5GDL43J9EPtPaJuMUd7AsygsGlH", "B3M0Urq3fJtw7BoeW0zztFK1uA243PpdugTyfKMK");
+
+    var user = new Parse.User();
         user.set("email", email);
         user.set("firstName", firstName);
         user.set("lastName", lastName);

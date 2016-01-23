@@ -58,3 +58,10 @@ $balanced:                        #1abc9c !default;
   text-align: center;
   color: white;
 }
+
+.job-tag {
+  background-color: $main;
+  border-radius: 10px;
+  font-size: 10px;
+  padding: 5px;
+}

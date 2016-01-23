@@ -12,15 +12,24 @@
   <ion-content>
     <ion-slide-box show-pager="false" on-slide-changed="slideChange($index)">
       <ion-slide>
-        <div class="list">
-          <ion-list>
-            <ion-item ng-repeat="post in jobberPosts" class="item-icon-right" type="item-text-wrap" ng-click="detailPage(category)" >
-              <img src="venkman.jpg">
-              <h2>{{post.title}}</h2>
-              <p>{{post.detail}}</p>
-              <span class="badge badge-assertive">0</span>
-            </ion-item>
-          </ion-list>
+        <div ng-repeat="post in jobberPosts" class="list card">
+
+          <div class="item item-avatar">
+            <img src="img/adam.jpg">
+            <h2>{{post.firstName}} {{post.lastName}}</h2>
+            <span class="job-tag">Tutor</span>
+            <span class="job-tag">Mover</span>
+          </div>
+
+          <div class="item item-body">
+            <p>
+              {{post.detail}}
+            </p>
+            <p>
+              <a href="#" class="subdued">1 Like</a>
+              <a href="#" class="subdued">5 Comments</a>
+            </p>
+          </div>
         </div>
       </ion-slide>
       <ion-slide>

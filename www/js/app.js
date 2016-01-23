@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllerModule.js
 angular.module('starter', ['ionic', 'services', 'controllers'])
 
-.run(function($ionicPlatform, $rootScope) {
+.run(function($ionicPlatform, $rootScope, authorizationService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -23,7 +23,7 @@ angular.module('starter', ['ionic', 'services', 'controllers'])
   });
 
   $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams, $timeout) {
-    if (toState.authenticate && !authorizeService.isLoggedIn()) {
+    if (toState.authenticate && !authorizationService.isLoggedIn()) {
       event.preventDefault();
       $state.transitionTo('login');
     }

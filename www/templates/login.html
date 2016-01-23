@@ -1,0 +1,42 @@
+<ion-view class="background">
+  <ion-content class="common-content-form">
+    <div class="register-div">
+      <form name="userForm" ng-submit="login(userForm.$valid,user)" novalidate>
+        <div>
+          <div class="row">
+            <div class="col">
+              <input class="common-input" type="email" name="input" ng-model="user.email" spellcheck="false" autocorrect="off" autocomplete="off"  placeholder="Email" required/>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input class="common-input" type="password" ng-model="user.password" placeholder="Password" required/>
+            </div>
+          </div>
+
+          <div>
+            <p ng-show="message" ng-class="error? 'error-message' : 'help-message'">{{message}}</p>
+          </div>
+          <div class="row row-bottom">
+            <div class="col">
+              <button type="submit" class="button button-no-margins button-big-font button-light" ng-disabled="userForm.$invalid">
+                Log in
+              </button>
+            </div>
+          </div>
+          <div class="forgot-password-div">
+            <a class="white-a" ng-click="register()">
+              Sign Up for YayONay
+            </a>
+          </div>
+          <div class="forgot-password-div">
+            <a class="white-a" ng-click="forgotPassword()">
+              Forgot Password?
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+
+  </ion-content>
+</ion-view>

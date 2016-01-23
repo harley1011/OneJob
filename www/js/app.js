@@ -32,6 +32,19 @@ angular.module('starter', ['ionic', 'controllers', 'services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
+
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'loginCtrl'
+    })
+
+    .state('register', {
+      url: '/register',
+      templateUrl: 'templates/register.html',
+      controller: 'registerCtrl'
+    })
+
     .state('tab', {
     url: '/tab',
     abstract: true,

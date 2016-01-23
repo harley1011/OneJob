@@ -1,6 +1,6 @@
 angular.module('controllers')
 
-  .controller('feedCtrl', function ($scope) {
+  .controller('favoritesCtrl', function ($scope) {
 
   })
 

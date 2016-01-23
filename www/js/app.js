@@ -54,51 +54,52 @@ angular.module('starter', ['ionic', 'controllers', 'services'])
   .state('tab.profile', {
       url: '/profile',
       views: {
-        'tab-chats': {
+        'tab-profile': {
           templateUrl: 'templates/tab-profile.html',
           controller: 'profileCtrl'
         }
       }
     })
 
-    .state('tab.postings', {
-      url: '/postings',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-postings.html',
-          controller: 'postingsCtrl'
-        }
-      }
-    })
-    .state('tab.messages', {
+  .state('tab.messages', {
       url: '/messages',
       views: {
-        'tab-chats': {
+        'tab-messages': {
           templateUrl: 'templates/tab-messages.html',
           controller: 'messagesCtrl'
         }
       }
     })
-
+  
+.state('tab.feed', {
+      url: '/feed',
+      views: {
+        'tab-feed': {
+          templateUrl: 'templates/tab-feed.html',
+          controller: 'feedCtrl'
+        }
+      }
+    })
+  .state('tab.postings', {
+      url: '/posting',
+      views: {
+        'tab-posting': {
+          templateUrl: 'templates/tab-postings.html',
+          controller: 'postingsCtrl'
+        }
+      }
+    })
+    
     .state('tab.favorites', {
       url: '/favorites',
       views: {
-        'tab-chats': {
+        'tab-favorites': {
           templateUrl: 'templates/tab-favorites.html',
           controller: 'favoritesCtrl'
         }
       }
     })
 
-    .state('tab.feed', {
-      url: '/feed',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-feed.html',
-          controller: 'feedCtrl'
-        }
-      }
-    })
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/profile');
 

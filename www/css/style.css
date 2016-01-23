@@ -1,1 +1,24 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: 'Lato';
+    src: url(https://fonts.googleapis.com/css?family=Lato);
+    
+}
+
+body {
+    font-family: 'Lato';
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.image{
+    text-align: center;
+}
+
+.desc {
+    color: #444;
+}

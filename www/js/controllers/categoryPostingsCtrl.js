@@ -3,7 +3,7 @@ angular.module('controllers')
   .controller('postingsCtrl', function ($scope, $ionicSlideBoxDelegate) {
 
     $scope.jobePost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
-    $scope.jobberPost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
+    $scope.jobberPosts = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
     $scope.categories = ['Childcare', 'Driving', 'Moving', 'Heavy Lifting', 'Yard Work', 'Odd Jobs', 'Errands']
 
     $scope.detailPage = function(category){

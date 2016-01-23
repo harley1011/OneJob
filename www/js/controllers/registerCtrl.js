@@ -1,5 +1,5 @@
 angular.module('controllers')
-  .controller('registerCtrl', function ($scope, $state, accountService, $ionicLoading) {
+  .controller('registerCtrl', function ($scope, $state, registrationService, $ionicLoading) {
     $scope.user =
     {
       email: "",
@@ -12,7 +12,9 @@ angular.module('controllers')
 
     };
     $scope.error = false;
+    $scope.register = function(){
 
+    }
 
   })
 

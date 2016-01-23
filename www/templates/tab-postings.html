@@ -1,13 +1,39 @@
 <ion-view view-title="Postings">
-  <ion-content>
-    <div class="bar bar-header">
-    <div class="bar bar-header">
-        <div class="button-bar bar-balanced">
-          <a class="button">Jobber</a>
-          <a class="button">Jobbee</a>
-        </div>  
+  <ion-nav-buttons side="secondary">
+    <i class="button icon-left button-clear"
+       ng-click="secondaryButtonAction()"> {{secondaryButtonTitle}}</i>
+  </ion-nav-buttons>
+  <ion-header-bar class="bar-subheader bar-light">
+    <div class="button-bar bar-balanced">
+      <button ng-click="switchSlide(0)" class="button">Jobber</button>
+      <button ng-click="switchSlide(1)" class="button">Jobbee</button>
     </div>
-      
-      
+  </ion-header-bar>
+  <ion-content>
+    <ion-slide-box show-pager="false" on-slide-changed="slideChange($index)">
+      <ion-slide>
+        <div class="list">
+          <ion-list>
+            <ion-item
+                      ng-repeat="categorie in categories" type="item-text-wrap">
+              <h2>{{categorie}}</h2>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="list">
+          <ion-list>
+            <ion-item class="item-remove-animate"
+                      ng-repeat="post in jobePost" type="item-text-wrap">
+
+              <h2>{{post.title}}</h2>
+
+              <p>{{post.detail}}</p>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
   </ion-content>
 </ion-view>

@@ -17,13 +17,13 @@ angular.module('services').service(
       });
     }
 
-    this.isLoggedIn = function (callback)
+    this.isLoggedIn = function ()
     {
       var currentUser = Parse.User.current();
       if (currentUser) {
-        callback({success: true})
+        return true;
       } else {
-        callback({success: false});
+        return false;
       }
     }
   });

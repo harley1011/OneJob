@@ -7,3 +7,6 @@ plugins/
 .bowerrc
 .editorconfig
 .idea
+www/js/controllers.js
+www/js/directives.js
+www/js/services.js

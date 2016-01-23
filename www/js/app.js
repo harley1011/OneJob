@@ -37,7 +37,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     abstract: true,
     templateUrl: 'templates/tabs.html'
   })
-    
+
   .state('tab.profile', {
       url: '/profile',
       views: {

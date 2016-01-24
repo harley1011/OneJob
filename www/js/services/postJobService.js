@@ -65,10 +65,12 @@ angular.module('services').service(
         success: function () {
           console.log("success");
           callback({success: true, post: result});
+            return true;
         },
-        error: function () {
+        error: function (error) {
           console.log("fail");
           callback({success: false, message: error});
+            return false;
         }
       });
     }
@@ -84,9 +86,11 @@ angular.module('services').service(
       bid.save(null, {
         success: function () {
           console.log("success");
+            return true;
         },
         error: function () {
           console.log("fail");
+            return false;
         }
       });
     }

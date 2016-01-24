@@ -161,6 +161,6 @@ angular.module('starter', ['ionic', 'services', 'controllers', 'ion-autocomplete
     })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/login');
+  $urlRouterProvider.otherwise('/tab/profile');
 
 });

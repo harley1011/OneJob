@@ -13,7 +13,7 @@ angular.module('services')
                 console.log ("Success!");
                 callback ({success:true, data:review});
                return true;
-           }
+           },
             error: function (error){
                 console.log("error!"+ error); 
                 callback ({success:false});
@@ -23,24 +23,45 @@ angular.module('services')
     }
     
     
+   
     this.getReview = function (jobID, callback){
          var review = Parse.Object.extends ("Review");
          var query = new Parse.Query (review);
         query.equalTo ("job",jobID);
-        query.find ({
+        query.first({
            success:function (results){
-              console.log (results);
+             
+                var reviewDesc = results.get("description");
+                console.log (reviewDesc);
                callback ({success:true, data:results});
                return true;  
-           }
+           },
             error: function (){
                 console.log("error!")
                 callback ({success:false});
                 return false;
         }
         });
-         
-        
+              
+    }
+    
+    this.getAllReviews = function  (callback){
+        var user = Parse.User.current();
+        var review = Parse.Object.extends("Review");
+        var query = new Parse.Query (review);
+        query.equalTo("postedBy", user);
+        query.find({
+          success:function (results){
+              console.log(results);
+              callbalk ({success:true, data: results});
+              return true;
+          },
+            error: function (){
+                console.log("error!");
+                callback ({success:false});
+                return false;
+            }
+        })
     }
     
     

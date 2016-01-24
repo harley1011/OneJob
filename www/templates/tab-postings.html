@@ -57,7 +57,7 @@
 
               </div>
 
-              <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency}}</div>
+              <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency : "$" : 0}}</div>
             </div>
           </div>
         </div>
@@ -67,7 +67,7 @@
               <h2>{{post.title}}</h2>
               <p class="item-detail">{{post.description}}</p>
               <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-              <span ng-if="post.cost" class="job-tag">{{post.cost | currency}}</span>
+              <span ng-if="post.cost" class="job-tag">{{post.cost | currency : "$" : 0}}</span>
               <span ng-if="post.duration" class="job-tag">{{post.duration}} hour(s)</span>
             </div>
           </div>
@@ -82,7 +82,7 @@
 
                 </div>
 
-                <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency}}</div>
+                <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency : "$" : 0}}</div>
             </div>
             </div>
           </div>

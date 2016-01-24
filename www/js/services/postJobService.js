@@ -12,16 +12,15 @@ angular.module('services').service(
       if (location != null) {query.equalTo ("location", location);}//match location
       query.ascending("cost");//sort ascending
       query.limit (limit);//limit the number of rows returned
-
+      query.include("postedBy");
       query.find({
         success: function(results) {
           console.log("success");
           console.log(results);
-          callback({success: true, data: results});
+          callback({success: true, jobs: results});
         },
         error: function(error) {
           console.log("Error: " + error.code + " " + error.message);
-             callback ({success:false, message:error});
         }
       });
     }
@@ -41,13 +40,10 @@ angular.module('services').service(
         success: function(results) {
           console.log("success");
           console.log(results);
-          callback({success:true, data: results});
-            return true;
+          callback({success:true, jobs: results});
         },
         error: function(error) {
           console.log("Error: " + error.code + " " + error.message);
-             callback ({success:false, message:error});
-            return false;
         }
       });
     }
@@ -68,17 +64,32 @@ angular.module('services').service(
       job.save(null, {
         success: function () {
           console.log("success");
-          callback({success: true, data: job});
-            return true;
+          callback({success: true, post: result});
         },
         error: function () {
           console.log("fail");
           callback({success: false, message: error});
-            return false;
         }
       });
     }
 
+    this.makeBid = function (contractorID, jobID, bidValue, callback) {
+      var Bid = Parse.Object.extend("Bid");
+      var bid = new Bid();
+
+      bid.set("contractorID", contractorID);
+      bid.set("bidValue", bidValue);
+      bid.set("jobID", jobID);
+
+      bid.save(null, {
+        success: function () {
+          console.log("success");
+        },
+        error: function () {
+          console.log("fail");
+        }
+      });
+    }
   })
 ;
 

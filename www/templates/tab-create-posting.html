@@ -5,6 +5,7 @@
   </ion-nav-buttons>
   <ion-content>
     <div class="list">
+
       <label class="item item-input item-stacked-label">
         <span class="input-label">Title</span>
         <input type="text" ng-model="post.title" placeholder="Give a title to your post">
@@ -13,10 +14,21 @@
         <span class="input-label">Details</span>
         <input type="text" ng-model="post.detail" placeholder="Give some details about your post">
       </label>
-
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Category</span>
+        <input type="text" ng-model="post.tag" placeholder="Give job a category">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Location</span>
+        <input type="text" ng-model="post.location" placeholder="Give job a category">
+      </label>
       <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" ng-model="post.tag" placeholder="Search Tags">
+        <span class="input-label">Hourly Rate($)</span>
+        <input type="number" ng-model="post.cost">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Duration(h)</span>
+        <input type="number" ng-model="post.duration">
       </label>
     </div>
 

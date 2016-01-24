@@ -1,6 +1,6 @@
 angular.module('controllers')
 
-  .controller('createPostingCtrl', function ($scope, $state, $ionicSlideBoxDelegate, jobService) {
+  .controller('createPostingCtrl', function ($scope, $state, $ionicSlideBoxDelegate, jobService, $ionicHistory, $rootScope) {
 
     $scope.post = {
       title: "",
@@ -11,13 +11,17 @@ angular.module('controllers')
       location: "West Island"
     }
 
-    $scope.createPost = function (){
+    $scope.createPost = function () {
       jobService.postJob($scope.post.title, $scope.post.detail,
         $scope.post.cost, $scope.post.duration, $scope.post.location,
         $scope.post.tag, function(result){
-        console.log(result);
+        console.log(JSON.parse(JSON.stringfy(result)));
+          $rootScope.$broadcast
+        $ionicHistory.goBack(-1);
       })
     }
+
+
 
 
   })

@@ -30,6 +30,11 @@ angular.module('controllers')
       $state.go('tab.postingDetail');
     }
 
+    $scope.userPostingDetail = function (post) {
+      tempStorageService.setTempStore(post);
+      $state.go('tab.userPostingDetail');
+    }
+
     $rootScope.$on('addPost', function (e, post) {
       $scope.myJobsPost.push(post);
     })

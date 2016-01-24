@@ -1,9 +1,94 @@
-<ion-view view-title="Account">
+<ion-view view-title="Profile">
+  <ion-nav-buttons side="secondary">
+    <i class="button icon-left button-clear"
+       ng-click="edit()">Edit</i>
+  </ion-nav-buttons>
   <ion-content>
-    <ion-list>
-        <ion-item>Personal Information</ion-item>
-        <ion-item>Notifications</ion-item>
-        <ion-item>Sign out</ion-item>
-    </ion-list>
+      <div class="personal-info">
+          <div class="image">
+          <img class="thumbnail" src="img/adam.jpg">
+              <p class="profile-name">John Doe</p>
+          </div>
+<!--
+          <div class="col desc">
+              <ul>
+                  <li>70 likes</li>
+                  <li>3.7 &#9733 jobber</li>
+                  <li>4.6 &#9733 jobbee</li>
+
+              </ul>
+          </div>
+-->
+
+      </div>
+      <div class="row ratings">
+          <div class="col col-40" style="padding-top:14px;">72 likes</div>
+          <div class="col col-40 col-offset-20">
+              <p class="rname">3.7 &#9733 jobber</p>
+              <p class="rname">4.6 &#9733 jobbee</p>
+          </div>
+
+      </div>
+
+<!--
+      <div class="tabs-striped tabs-top tabs-color-calm">
+    <div class="tabs scroll-tabs">
+      <a class="tab-item active" href="#">
+        <i class="icon ion-person"></i>
+
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-star"></i>
+
+      </a>
+      <a class="tab-item" href="#">
+        <i class="icon ion-gear-a"></i>
+
+      </a>
+    </div>
+  </div>
+-->
+      <div class="profile-content">
+
+
+    <div class="row">
+        <h3>About Me</h3></div>
+    <div class="row">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus, erat et lacinia commodo, nisi ante auctor velit, malesuada faucibus sapien ante malesuada sem.
+        </p>
+    </div>
+    <div class="row">
+        <h3>Reviews</h3>
+    </div>
+          <div class="card">
+              <div class="item item-text-wrap">
+                  <p><span class="name">Mary Smith</span> 4.6 &#9733 Jobbee</p>
+                  <p>Donec tempus, erat et lacinia commodo, nisi ante auctor velit, malesuada faucibus sapien ante malesuada sem.  </p>
+             </div>
+                  <div class="item item-text-wrap">
+                  <p><span class="name">Josh Devin</span> 4.6 &#9733 Jobber</p>
+                  <p>Donec tempus, erat et lacinia commodo, nisi ante auctor velit, malesuada faucibus sapien ante malesuada sem.  </p>
+             </div>
+                <div class="item item-text-wrap">
+                  <p><span class="name">Ronald McDo</span> 4.6 &#9733 Jobbee</p>
+                  <p>Donec tempus, erat et lacinia commodo, nisi ante auctor velit, malesuada faucibus sapien ante malesuada sem.  </p>
+             </div>
+
+
+          </div>
+          <div class="row"><h3>Tags</h3></div>
+          <div class="row"><p>
+          <span class="job-tag">Tutor</span>
+          <span class="job-tag">Babysitter</span>
+          <span class="job-tag">Babysitter</span>
+          <span class="job-tag">Babysitter</span>
+          <span class="job-tag">Babysitter</span>
+          <span class="job-tag">Babysitter</span>
+              </p>
+          </div>
+          <div class="row"><h3>Listings</h3></div>
+
+      </div>
+
   </ion-content>
 </ion-view>

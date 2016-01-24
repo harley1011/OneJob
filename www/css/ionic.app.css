@@ -9811,6 +9811,9 @@ a.button {
   overflow: visible !important;
   white-space: normal !important; }
 
+.button-fix {
+  margin-top: 15px; }
+
 .help-message {
   text-align: center;
   color: white; }

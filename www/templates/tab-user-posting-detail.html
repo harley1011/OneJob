@@ -1,0 +1,47 @@
+<ion-view view-title="Details">
+  <ion-nav-buttons side="secondary">
+    <button class="button icon-left button-clear"
+       ng-click="editFields()">{{!edit? 'Done' : 'Edit'}}</button>
+  </ion-nav-buttons>
+  <ion-content ng-init="init()">
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Title</span>
+        <input ng-disabled="edit" type="text" ng-model="post.title" placeholder="Give a title to your post">
+      </label>
+      <label ng-show="showMore" class="item item-input item-stacked-label">
+        <span class="input-label">Details</span>
+        <input  ng-disabled="edit" type="text" ng-model="post.description" placeholder="Give some details about your post">
+      </label>
+      <label ng-show="showMore" class="item item-input item-stacked-label">
+        <span class="input-label">Category</span>
+        <input ng-disabled="edit" type="text" ng-model="post.category" placeholder="Give job a category">
+      </label>
+      <label ng-show="showMore" class="item item-input item-stacked-label">
+        <span class="input-label">Location</span>
+        <input ng-disabled="edit" type="text" ng-model="post.location" placeholder="Give job a category">
+      </label>
+      <label ng-show="showMore" class="item item-input">
+        <span class="input-label">Hourly Rate($)</span>
+        <input ng-disabled="edit" type="number" ng-model="post.cost">
+      </label>
+      <label ng-show="showMore" class="item item-input">
+        <span class="input-label">Duration(h)</span>
+        <input ng-disabled="edit" type="number" ng-model="post.duration">
+      </label>
+    </div>
+
+    <button class="button button-calm button-block" ng-click="showMoreFields()">{{showMore? 'Show Less' : 'Show More'}}</button>
+
+    <div class="list">
+      <a ng-repeat="bid in bids" class="item item-button-right" href="#">
+        <h2>{{bid.contractor.username}} </h2>
+        <p>Has bidded {{bid.bidValue | currency}}</p>
+        <button class="button button-fix button-calm">
+         Pick
+        </button>
+      </a>
+
+    </div>
+  </ion-content>
+</ion-view>

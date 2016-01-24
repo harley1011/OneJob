@@ -9817,8 +9817,8 @@ a.button {
 
 .job-tag {
   background-color: #1abc9c;
-  border-radius: 10px;
+  border-radius: 14px;
   font-size: 10px;
-  padding: 5px;
-  margin-right: 2px;
+  padding: 2px 9px;
+  margin-right: 3px;
   font-weight: bold; }

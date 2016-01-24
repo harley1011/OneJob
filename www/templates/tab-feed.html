@@ -1,9 +1,24 @@
-<ion-view view-title="Trending">
+<ion-view view-title="Browse">
   <ion-content>
+      <div class="list">
+
+  <div class="item item-input-inset">
+    <label class="item-input-wrapper">
+      <input type="text" placeholder="Search">
+    </label>
+    <a class="button button-icon button-small icon ion-ios-search"></a>
+  </div>
+
+</div>
+      <div class="item item-divider">
+    Categories
+  </div>
     <ion-list>
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
+        <ion-item>Home care</ion-item>
+        <ion-item>Repairs</ion-item>
+        <ion-item>Childcare</ion-item>
+        <ion-item>Errands</ion-item>
+        <ion-item>Cooking</ion-item>
     </ion-list>
   </ion-content>
 </ion-view>

@@ -12,7 +12,7 @@ angular.module('services').service(
       if (location != null) {query.equalTo ("location", location);}//match location
       query.ascending("cost");//sort ascending
       query.limit (limit);//limit the number of rows returned
-
+      query.include("postedBy");
       query.find({
         success: function(results) {
           console.log("success");
@@ -64,7 +64,7 @@ angular.module('services').service(
       job.save(null, {
         success: function () {
           console.log("success");
-          callback({success: true});
+          callback({success: true, post: result});
         },
         error: function () {
           console.log("fail");

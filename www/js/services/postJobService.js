@@ -68,7 +68,11 @@ angular.module('services').service(
             return true;
         },
         error: function (error) {
+<<<<<<< HEAD
           console.log("fail");
+=======
+          console.log(error);
+>>>>>>> 0dba14c1eefc5e3a9ae1c6387bbc0e37c07a742a
           callback({success: false, message: error});
             return false;
         }
@@ -96,5 +100,3 @@ angular.module('services').service(
     }
   })
 ;
-
-

@@ -48,7 +48,7 @@ angular.module('services').service(
       });
     }
 
-    this.postJob = function (title, description, cost, duration, location, callback) {
+    this.postJob = function (title, description, cost, duration, location, category, callback) {
 
       var Job = Parse.Object.extend("Job");
 

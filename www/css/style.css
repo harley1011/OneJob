@@ -71,6 +71,7 @@ a.tab-item {
 .ratings {
 /*    border: 1px solid black;*/
     padding: 0 !important;
+    color: #444;
 }
 
 .ratings > .col {

@@ -112,4 +112,6 @@ p.rname {
     position: absolute;
     top: 10px;
     margin-left: 204px !important;
+    width: 62px !important;
+    text-align: right !important;
 }

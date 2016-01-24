@@ -1,33 +1,26 @@
 <ion-view view-title="Details">
-  <ion-content ng-init="init()">
+  <ion-content class="padding" ng-init="init()">
+
     <div class="list">
-
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Title</span>
-        <input type="text" ng-model="post.title" placeholder="Give a title to your post">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Details</span>
-        <input type="text" ng-model="post.detail" placeholder="Give some details about your post">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Category</span>
-        <input type="text" ng-model="post.tag" placeholder="Give job a category">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Location</span>
-        <input type="text" ng-model="post.location" placeholder="Give job a category">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Hourly Rate($)</span>
-        <input type="number" ng-model="post.cost">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Duration(h)</span>
-        <input type="number" ng-model="post.duration">
-      </label>
+      <div class="item item-divider">
+        <h2>{{post.title}} </h2>
+        <h3>{{post.postedBy.username}} </h3>
+      </div>
+      <div class="item item-text-wrap">
+        {{post.description}}
+      </div>
+      <div class="item item-divider">
+        Bids
+      </div>
+      <div ng-if="bids.length == 0" class="item">
+        <p>There are no bids yet!</p>
+      </div>
+      <div ng-repeat="bid in bids" class="item">
+          <h2>{{bid.contractor.username}} </h2>
+          <p>Has bidded {{bid.bidValue | currency}}</p>
+      </div>
     </div>
-
-    <button class="button button-calm button-block" ng-click="updateJob()">Update Job</button>
+    <button class="button button-calm button-block" ng-click="makeBid()">Make Bid</button>
+    <button class="button button-calm button-block" ng-click="contact()">Contact Jobee</button>
   </ion-content>
 </ion-view>

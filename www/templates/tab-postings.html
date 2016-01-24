@@ -64,12 +64,10 @@
     
                   <p class="item-detail">For about {{post.duration}} hour(s)</p>
                   <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-                  <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-                  <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-                  <span ng-if="post.category" class="job-tag">{{post.category}}</span>
+                  
                 </div>
                 
-                <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency}}</div>
+                <div class="col col-33 item-cost" ng-if="post.cost"><p class="dollar-sign">$</p>{{post.cost}}</div>
             </div>
             </div>
           </div>

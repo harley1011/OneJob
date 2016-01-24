@@ -100,3 +100,9 @@ p.rname {
     color: #1abc9c;
     padding: 15px 0 0 2px !important;
 }
+
+.dollar-sign {
+    color: #444;
+    display: inline;
+    margin-right: 1px;
+}

@@ -2,6 +2,7 @@ angular.module('controllers')
 
   .controller('postingsCtrl', function ($scope, $state, $ionicSlideBoxDelegate, jobService, $rootScope) {
 
+    $scope.currentTab = 0;
     $scope.jobsPost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
     $scope.myJobsPost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
     $scope.jobberPosts = [
@@ -16,6 +17,8 @@ angular.module('controllers')
     $rootScope.$on('addPost', function(e, post){
       $scope.myJobsPost.push(post);
     })
+
+
     $scope.init = function(){
       jobService.returnAllJobs(50, null, null, function(result){
         console.log(JSON.parse(JSON.stringify(result.jobs)));
@@ -37,11 +40,14 @@ angular.module('controllers')
     }
 
     $scope.switchSlide = function(index){
+
       if (index == 1)
       {
+        $scope.currentTab = 1;
         $ionicSlideBoxDelegate.slide(1)
       }
       else {
+        $scope.currentTab = 0;
         $ionicSlideBoxDelegate.slide(0);
       }
 

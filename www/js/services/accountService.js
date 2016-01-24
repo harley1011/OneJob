@@ -47,6 +47,25 @@ angular.module('services').service(
         });
     }
     
+    
+    this.setRole = function (role, callback) {
+     
+    //Find user by ID
+    var user = Parse.User.current();
+    if (role != null) {user.set ("roleType", role);}
+     user.save(null, {
+            success: function() {
+                callback({success:true, user:user});
+                return true;
+            },
+            error: function(error) {
+                callback({success:false, user:user});
+                return false;
+            }
+        });
+  
+}
+    
   });
 
 

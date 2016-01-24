@@ -92,5 +92,3 @@ angular.module('services').service(
     }
   })
 ;
-
-

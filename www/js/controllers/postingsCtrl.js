@@ -13,7 +13,10 @@ angular.module('controllers')
     }
 
     $scope.init = function(){
-      jobService.return
+      jobService.returnAllJobs(10, null, function(result){
+
+
+      })
     }
     $scope.secondaryButtonAction = function(){
       $state.go('tab.createPosting');

@@ -67,31 +67,23 @@ angular.module('services').service(
       });
     }
 
-    this.makeBid = function makeBid(contractorID, jobID, bidValue, callback) {
+    this.makeBid = function makeBid (contractorID, jobID, bidValue, callback) {
       var Bid = Parse.Object.extend("Bid");
       var bid = new Bid();
 
       bid.set("contractorID", contractorID);
       bid.set("bidValue", bidValue);
+      bid.set("jobID", jobID);
 
-      var JobObject = Parse.Object.extend("Job");
-
-      var query = new Parse.Query(JobObject);
-      query.equalTo("objectId", jobID);
-      query.first({
-        success: function (object) {
-          bid.set("jobeeID", object.get("jobeeID"));
-          bid.save();
+      bid.save(null, {
+        success: function () {
           console.log("success");
-          callback({success: true});
         },
-        error: function (error) {
-          console.log(error);
-          callback({success: false, message: error})
+        error: function () {
+          console.log("fail");
         }
       });
     }
-
   })
 ;
 

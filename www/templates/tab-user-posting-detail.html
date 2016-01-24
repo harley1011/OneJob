@@ -32,7 +32,7 @@
     </div>
 
     <button class="button button-calm button-block" ng-click="showMoreFields()">{{showMore? 'Show Less' : 'Show More'}}</button>
-    <div class="card">
+    <div ng-hide="isThereContractor" class="card">
       <div class="item item-avatar">
         <img src="img/adam.jpg">
         <h2>{{post.contractor.firstName}} {{post.contractor.lastName}}</h2>

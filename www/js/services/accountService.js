@@ -2,6 +2,10 @@ angular.module('services').service(
   'accountService', function () {
     Parse.initialize("WNMS58WrCeFRP5GDL43J9EPtPaJuMUd7AsygsGlH", "B3M0Urq3fJtw7BoeW0zztFK1uA243PpdugTyfKMK");
 
+    this.getUser = function(){
+      return JSON.parse(JSON.stringify(Parse.User.current()));
+    }
+
     this.changeAboutMe = function (aboutMe, callback) {
         var user = Parse.User.current();
         user.set("aboutMe", aboutMe);
@@ -31,7 +35,7 @@ angular.module('services').service(
             }
         });
     }
-    
+
     this.changeAvailability = function(availability, callback) {
         var user = Parse.User.current();
         user.set("availability", availability);
@@ -46,10 +50,10 @@ angular.module('services').service(
             }
         });
     }
-    
-    
+
+
     this.setRole = function (role, callback) {
-     
+
     //Find user by ID
     var user = Parse.User.current();
     if (role != null) {user.set ("roleType", role);}
@@ -63,9 +67,9 @@ angular.module('services').service(
                 return false;
             }
         });
-  
+
 }
-    
+
   });
 
 

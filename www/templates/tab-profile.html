@@ -3,11 +3,11 @@
     <i class="button icon-left button-clear"
        ng-click="edit()">Edit</i>
   </ion-nav-buttons>
-  <ion-content>
+  <ion-content ng-init="init()">
       <div class="personal-info">
           <div class="image">
           <img class="thumbnail" src="img/adam.jpg">
-              <p class="profile-name">John Doe</p>
+              <p class="profile-name">{{user.firstName}} {{user.lastName}}</p>
           </div>
 <!--
           <div class="col desc">
@@ -54,7 +54,7 @@
     <div class="row">
         <h3>About Me</h3></div>
     <div class="row">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus, erat et lacinia commodo, nisi ante auctor velit, malesuada faucibus sapien ante malesuada sem.
+        <p>{{user.aboutMe}}
         </p>
     </div>
     <div class="row">

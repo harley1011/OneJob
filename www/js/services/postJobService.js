@@ -66,8 +66,8 @@ angular.module('services').service(
           console.log("success");
           callback({success: true, post: result});
         },
-        error: function () {
-          console.log("fail");
+        error: function (error) {
+          console.log(error);
           callback({success: false, message: error});
         }
       });

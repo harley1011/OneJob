@@ -3,92 +3,55 @@
     <i class="button icon-left button-clear"
        ng-click="secondaryButtonAction()"> {{secondaryButtonTitle}}</i>
   </ion-nav-buttons>
-     <div class="tabs-striped tabs-top tabs-color-calm">
+  <div class="tabs-striped tabs-top tabs-color-calm">
     <div class="tabs scroll-tabs">
       <a class="tab-item" ng-class="currentTab == 0? 'active' : ' ' " href="#" ng-click="switchSlide(0)">
         Jobber
       </a>
-      <a class="tab-item" ng-class="currentTab == 1? 'active' : ' ' "  g-class="currentTab == 1? 'active' : ' ' " href="#" ng-click="switchSlide(1)">
+      <a class="tab-item" ng-class="currentTab == 1? 'active' : ' ' " g-class="currentTab == 1? 'active' : ' ' "
+         href="#" ng-click="switchSlide(1)">
         Jobbee
       </a>
 
     </div>
   </div>
-<!--
-  <ion-header-bar class="bar-subheader bar-light">
-    <div class="button-bar bar-balanced">
-      <button ng-click="switchSlide(0)" class="button">Jobber</button>
-      <button ng-click="switchSlide(1)" class="button">Jobbee</button>
-    </div>
-  </ion-header-bar>
--->
+  <!--
+    <ion-header-bar class="bar-subheader bar-light">
+      <div class="button-bar bar-balanced">
+        <button ng-click="switchSlide(0)" class="button">Jobber</button>
+        <button ng-click="switchSlide(1)" class="button">Jobbee</button>
+      </div>
+    </ion-header-bar>
+  -->
   <ion-content class="tab-content" ng-init="init()">
-      <div class="under-tab-content">
-    <ion-slide-box show-pager="false" on-slide-changed="slideChange($index)">
-      <ion-slide>
-        <div ng-repeat="post in jobberPosts" class="list card">
-          <div class="item item-avatar">
-            <img src="{{post.profilePicture}}">
-            <h2>{{post.firstName}} {{post.lastName}}</h2>
-            <span ng-repeat="tag in post.tags" class="job-tag">{{tag}}</span>
-          </div>
-          <div class="item">
-            <p class="item-detail">
-              {{post.detail}}
-            </p>
-            <p>
+    <div class="under-tab-content">
+      <ion-slide-box show-pager="false" on-slide-changed="slideChange($index)">
+        <ion-slide>
+          <div ng-repeat="post in jobberPosts" class="list card">
+            <div class="item item-avatar">
+              <img src="{{post.profilePicture}}">
+              <h2>{{post.firstName}} {{post.lastName}}</h2>
+              <span ng-repeat="tag in post.tags" class="job-tag">{{tag}}</span>
+            </div>
+            <div class="item">
+              <p class="item-detail">
+                {{post.detail}}
+              </p>
+              <p>
               <span ng-repeat="i in getNumber(post.rating) track by $index"
                     class="ion-star energized icon-right"></span>
-              <span>{{post.reviews}} reviews</span>
-            </p>
-          </div>
-        </div>
-      </ion-slide>
-      <ion-slide>
-        <div class="list">
-          <div ng-if="myJobsPost.length > 0" class="item item-divider">My Job Posts</div>
-          <div ng-click="userPostingDetail(post)"  ng-repeat="post in myJobsPost" class="item">
-            <div class="class row">
-              <div class="col col-67">
-                <h2 class="job-title">{{post.title}}</h2>
-
-                <p class="item-detail">For about {{post.duration}} hour(s)</p>
-                <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-
-              </div>
-
-              <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency : "$" : 0}}</div>
+                <span>{{post.reviews}} reviews</span>
+              </p>
             </div>
           </div>
-        </div>
-          <div ng-if="hiredJobs.length > 0" class="item item-divider">Hired Jobs</div>
-          <div ng-click="userHiredJobDetail(post)" ng-repeat="post in hiredJobs" class="item">
-<<<<<<< HEAD
-           <div class="class row">
+        </ion-slide>
+        <ion-slide>
+          <div class="list">
+            <div ng-if="myJobsPost.length > 0" class="item item-divider">My Job Posts</div>
+            <div ng-click="userPostingDetail(post)" ng-repeat="post in myJobsPost" class="item">
+              <div class="class row">
                 <div class="col col-67">
-                <h2 class="job-title">{{post.title}}</h2>
-
-                  <p class="item-detail">For about {{post.duration}} hour(s)</p>
-                  <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-
-                </div>
-
-                <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency}}</div>
-=======
-            <div class="class">
-              <h2>{{post.title}}</h2>
-              <p class="item-detail">{{post.description}}</p>
-              <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-              <span ng-if="post.cost" class="job-tag">{{post.cost | currency : "$" : 0}}</span>
-              <span ng-if="post.duration" class="job-tag">{{post.duration}} hour(s)</span>
->>>>>>> f42e86ea2e736dc78e29b759368fad694d5b9ede
-            </div>
-          </div>
-          <div ng-if="jobsPost.length > 0" class="item item-divider">Jobs</div>
-          <div ng-click="postingDetail(post)"  ng-repeat="post in jobsPost" class="item">
-            <div class="class row">
-                <div class="col col-67">
-                <h2 class="job-title">{{post.title}}</h2>
+                  <h2 class="job-title">{{post.title}}</h2>
 
                   <p class="item-detail">For about {{post.duration}} hour(s)</p>
                   <span ng-if="post.category" class="job-tag">{{post.category}}</span>
@@ -96,13 +59,28 @@
                 </div>
 
                 <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency : "$" : 0}}</div>
-            </div>
+              </div>
             </div>
           </div>
-        </div>
+            <div ng-if="jobsPost.length > 0" class="item item-divider">Jobs</div>
+            <div ng-click="postingDetail(post)" ng-repeat="post in jobsPost" class="item">
+              <div class="class row">
+                <div class="col col-67">
+                  <h2 class="job-title">{{post.title}}</h2>
 
-      </ion-slide>
+                  <p class="item-detail">For about {{post.duration}} hour(s)</p>
+                  <span ng-if="post.category" class="job-tag">{{post.category}}</span>
+
+                </div>
+
+                <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency : "$" : 0}}</div>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    </ion-slide>
     </ion-slide-box>
-      </div>
+    </div>
   </ion-content>
 </ion-view>

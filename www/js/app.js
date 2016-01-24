@@ -120,6 +120,16 @@ angular.module('starter', ['ionic', 'services', 'controllers', 'ion-autocomplete
       }
     })
 
+    .state('tab.userPostingDetail', {
+      url: '/userPostingDetail',
+      views: {
+        'tab-posting': {
+          templateUrl: 'templates/tab-user-posting-detail.html',
+          controller: 'userPostingDetailCtrl'
+        }
+      }
+    })
+
     .state('tab.createPosting', {
       url: '/createPosting',
       views: {

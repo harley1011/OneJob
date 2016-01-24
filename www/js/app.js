@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in serviceModule.js
 // 'starter.controllers' is found in controllerModule.js
-angular.module('starter', ['ionic', 'services', 'controllers'])
+angular.module('starter', ['ionic', 'services', 'controllers', 'ion-autocomplete'])
 
 .run(function($ionicPlatform, $rootScope, authorizationService) {
   $ionicPlatform.ready(function() {
@@ -106,6 +106,16 @@ angular.module('starter', ['ionic', 'services', 'controllers'])
         'tab-posting': {
           templateUrl: 'templates/tab-postings.html',
           controller: 'postingsCtrl'
+        }
+      }
+    })
+
+    .state('tab.createPosting', {
+      url: '/createPosting',
+      views: {
+        'tab-posting': {
+          templateUrl: 'templates/tab-create-posting.html',
+          controller: 'createPostingCtrl'
         }
       }
     })

@@ -13,21 +13,19 @@
     <ion-slide-box show-pager="false" on-slide-changed="slideChange($index)">
       <ion-slide>
         <div ng-repeat="post in jobberPosts" class="list card">
-
           <div class="item item-avatar">
-            <img src="img/adam.jpg">
+            <img src="{{post.profilePicture}}">
             <h2>{{post.firstName}} {{post.lastName}}</h2>
-            <span class="job-tag">Tutor</span>
-            <span class="job-tag">Mover</span>
+            <span ng-repeat="tag in post.tags" class="job-tag">{{tag}}</span>
           </div>
 
-          <div class="item item-body">
-            <p>
+          <div class="item">
+            <p class="item-detail">
               {{post.detail}}
             </p>
             <p>
-              <a href="#" class="subdued">1 Like</a>
-              <a href="#" class="subdued">5 Comments</a>
+              <span ng-repeat="i in getNumber(post.rating) track by $index" class="ion-star energized icon-right"></span>
+              <span>{{post.reviews}} reviews</span>
             </p>
           </div>
         </div>

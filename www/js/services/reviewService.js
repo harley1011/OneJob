@@ -15,14 +15,33 @@ angular.module('services')
                return true;
            }
             error: function (error){
-                console.log("error!"+ error);  
+                console.log("error!"+ error); 
+                callback ({success:false});
                 return false;
            }
         });
     }
     
     
-    
+    this.getReview = function (jobID, callback){
+         var review = Parse.Object.extends ("Review");
+         var query = new Parse.Query (review);
+        query.equalTo ("job",jobID);
+        query.find ({
+           success:function (results){
+              console.log (results);
+               callback ({success:true, data:results});
+               return true;  
+           }
+            error: function (){
+                console.log("error!")
+                callback ({success:false});
+                return false;
+        }
+        });
+         
+        
+    }
     
     
     

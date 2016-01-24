@@ -22,3 +22,18 @@ body {
 .desc {
     color: #444;
 }
+
+.tabs.scroll-tabs {
+    top: 100px !important;
+}
+
+.profile-content {
+    margin-top: 42px;   
+    padding: 10px;
+}
+
+h2 {
+    color: #444 !important;
+    
+
+}

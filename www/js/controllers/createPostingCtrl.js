@@ -12,7 +12,7 @@ angular.module('controllers')
     }
 
     $scope.createPost = function (){
-      jobService.postJob($scope.post.title, $scope.title.detail,
+      jobService.postJob($scope.post.title, $scope.post.detail,
         $scope.post.cost, $scope.post.duration, $scope.post.location,
         $scope.post.tag, function(result){
         console.log(result);

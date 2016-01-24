@@ -1,7 +1,7 @@
 /* Empty. Add your own CSS if you like */
 @font-face {
     font-family: 'Lato';
-    src: url(https://fonts.googleapis.com/css?family=Lato);
+    src: url("https://fonts.googleapis.com/css?family=Lato");
     
 }
 
@@ -15,12 +15,21 @@ body {
     border-radius: 50px;
 }
 
+.personal-info {
+    background-image: url("../img/map-bg.png");
+    background-size: contain;
+    height: 115px;
+}
+
 .image{
     text-align: center;
+    background-color: rgba(255,255,255,0.3);   
+    padding-top: 70px;
 }
 
 .desc {
     color: #444;
+    display:none;
 }
 
 .tabs.scroll-tabs {
@@ -44,6 +53,11 @@ body {
 }
 .name {
     font-weight: bold;   
+/*    color: #444;*/
+}
+
+.profile-name {
+    color: #444;   
 }
 
 .card {

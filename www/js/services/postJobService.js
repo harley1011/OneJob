@@ -12,6 +12,7 @@ angular.module('services').service(
       if (location != null) {query.equalTo ("location", location);}//match location
       query.ascending("cost");//sort ascending
       query.limit (limit);//limit the number of rows returned
+
       query.find({
         success: function(results) {
           console.log("success");

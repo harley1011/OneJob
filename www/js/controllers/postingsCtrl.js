@@ -14,7 +14,8 @@ angular.module('controllers')
 
     $scope.init = function(){
       jobService.returnAllJobs(50, null, null, function(result){
-        $scope.jobsPost = result.jobs
+        console.log(JSON.parse(JSON.stringify(result.jobs)));
+        $scope.jobsPost = JSON.parse(JSON.stringify(result.jobs));
       })
     }
     $scope.secondaryButtonAction = function(){

@@ -17,10 +17,11 @@ angular.module('services').service(
         success: function(results) {
           console.log("success");
           console.log(results);
-          callback({success: true, jobs: results});
+          callback({success: true, data: results});
         },
         error: function(error) {
           console.log("Error: " + error.code + " " + error.message);
+             callback ({success:false, message:error});
         }
       });
     }
@@ -40,10 +41,11 @@ angular.module('services').service(
         success: function(results) {
           console.log("success");
           console.log(results);
-          callback({success:true, jobs: results});
+          callback({success:true, data: results});
         },
         error: function(error) {
           console.log("Error: " + error.code + " " + error.message);
+             callback ({success:false, message:error});
         }
       });
     }
@@ -64,7 +66,7 @@ angular.module('services').service(
       job.save(null, {
         success: function () {
           console.log("success");
-          callback({success: true});
+          callback({success: true, data: job});
         },
         error: function () {
           console.log("fail");
@@ -84,9 +86,11 @@ angular.module('services').service(
       bid.save(null, {
         success: function () {
           console.log("success");
+            callback ({success:true});
         },
-        error: function () {
+        error: function (error) {
           console.log("fail");
+            callback ({success:false, message:error});
         }
       });
     }

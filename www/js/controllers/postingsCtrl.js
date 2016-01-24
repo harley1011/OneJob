@@ -17,6 +17,8 @@ angular.module('controllers')
     $rootScope.$on('addPost', function(e, post){
       $scope.myJobsPost.push(post);
     })
+
+
     $scope.init = function(){
       jobService.returnAllJobs(50, null, null, function(result){
         console.log(JSON.parse(JSON.stringify(result.jobs)));

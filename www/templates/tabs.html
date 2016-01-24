@@ -10,21 +10,20 @@ navigation history that also transitions its views in and out.
     <ion-nav-view name="tab-profile"></ion-nav-view>
   </ion-tab>
 
-  <!-- Messages Tab -->
+ <!-- Trending Tab -->
+  <ion-tab title="Browse" icon-off="ion-ios-search" icon-on="ion-ios-search" href="#/tab/feed">
+    <ion-nav-view name="tab-feed"></ion-nav-view>
+  </ion-tab>
+  <!-- Postings Tab-->
+  <ion-tab title="Postings" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/tab/posting">
+    <ion-nav-view name="tab-posting"></ion-nav-view>
+  </ion-tab>
+   
+    
+    <!-- Messages Tab -->
   <ion-tab title="Messages" icon-off="ion-ios-email-outline" icon-on="ion-email" href="#/tab/messages">
     <ion-nav-view name="tab-messages"></ion-nav-view>
   </ion-tab>
-
-  <!-- Trending Tab -->
-  <ion-tab title="Trending" icon-off="ion-arrow-graph-up-left" icon-on="ion-arrow-graph-up-left" href="#/tab/feed">
-    <ion-nav-view name="tab-feed"></ion-nav-view>
-  </ion-tab>
-
-  <!-- Postings Tab-->
-  <ion-tab title="Posting" icon-off="ion-ios-paper-outline" icon-on="ion-ios-paper" href="#/tab/posting">
-    <ion-nav-view name="tab-posting"></ion-nav-view>
-  </ion-tab>
-    
  <!-- Favourites Tab -->
   <ion-tab title="Favorites" icon-off="ion-ios-star-outline" icon-on="ion-ios-star" href="#/tab/favorites">
     <ion-nav-view name="tab-favorites"></ion-nav-view>

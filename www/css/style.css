@@ -82,3 +82,21 @@ a.tab-item {
 p.rname {
     margin: -2px 0 !important;   
 }
+
+.job-title {
+    font-size: 15pt !important;
+    margin: 0 !important;
+}
+
+
+.item p {
+    font-size: 9pt !important;
+}
+
+.item-cost {
+/*    border: 1px solid black;*/
+    text-align: center;
+    font-size: 16pt;
+    color: #1abc9c;
+    padding: 15px 0 0 2px !important;
+}

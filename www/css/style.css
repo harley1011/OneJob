@@ -24,7 +24,7 @@ body {
 }
 
 .tabs.scroll-tabs {
-    top: 100px !important;
+    top: 42px !important;
 }
 
 .profile-content {
@@ -36,14 +36,20 @@ body {
 .profile-content h3 {
     margin-top: 15px !important;
     color: #444 !important;
-    
 
 }
 
+.under-tab-content {
+    margin-top: 53px !important;
+}
 .name {
     font-weight: bold;   
 }
 
 .card {
     margin-top: 0 !important;   
+}
+
+a.tab-item {
+    font-weight: 500;   
 }

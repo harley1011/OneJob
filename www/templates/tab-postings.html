@@ -3,13 +3,29 @@
     <i class="button icon-left button-clear"
        ng-click="secondaryButtonAction()"> {{secondaryButtonTitle}}</i>
   </ion-nav-buttons>
+     <div class="tabs-striped tabs-top tabs-color-calm">
+    <div class="tabs scroll-tabs">
+      <a class="tab-item active" href="#" ng-click="switchSlide(0)">
+        Jobber
+        
+      </a>
+      <a class="tab-item" href="#" ng-click="switchSlide(1)">
+        Jobbee
+        
+      </a>
+     
+    </div>
+  </div> 
+<!--
   <ion-header-bar class="bar-subheader bar-light">
     <div class="button-bar bar-balanced">
       <button ng-click="switchSlide(0)" class="button">Jobber</button>
       <button ng-click="switchSlide(1)" class="button">Jobbee</button>
     </div>
   </ion-header-bar>
-  <ion-content ng-init="init()">
+-->
+  <ion-content class="tab-content" ng-init="init()">
+      <div class="under-tab-content">
     <ion-slide-box show-pager="false" on-slide-changed="slideChange($index)">
       <ion-slide>
         <div ng-repeat="post in jobberPosts" class="list card">
@@ -43,5 +59,6 @@
         </div>
       </ion-slide>
     </ion-slide-box>
+      </div>
   </ion-content>
 </ion-view>

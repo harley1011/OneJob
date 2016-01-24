@@ -5,17 +5,15 @@
   </ion-nav-buttons>
      <div class="tabs-striped tabs-top tabs-color-calm">
     <div class="tabs scroll-tabs">
-      <a class="tab-item active" href="#" ng-click="switchSlide(0)">
+      <a class="tab-item" ng-class="currentTab == 0? 'active' : ' ' " href="#" ng-click="switchSlide(0)">
         Jobber
-        
       </a>
-      <a class="tab-item" href="#" ng-click="switchSlide(1)">
+      <a class="tab-item" ng-class="currentTab == 1? 'active' : ' ' "  g-class="currentTab == 1? 'active' : ' ' " href="#" ng-click="switchSlide(1)">
         Jobbee
-        
       </a>
-     
+
     </div>
-  </div> 
+  </div>
 <!--
   <ion-header-bar class="bar-subheader bar-light">
     <div class="button-bar bar-balanced">
@@ -51,8 +49,8 @@
           <div ng-if="myJobsPost.length > 0" class="item item-divider">My Posts</div>
           <div ng-repeat="post in myJobsPost" class="item">
             <div class="class">
-              <h2>Title: {{post.title}}</h2>
-              <p class="item-detail">Details: {{post.description}}</p>
+              <h2>{{post.title}}</h2>
+              <p class="item-detail">{{post.description}}</p>
               <span ng-if="post.category" class="job-tag">{{post.category}}</span>
               <span ng-if="post.cost" class="job-tag">{{post.cost | currency}}</span>
               <span ng-if="post.duration" class="job-tag">{{post.duration}} hour(s)</span>
@@ -61,9 +59,9 @@
           <div ng-if="jobsPost.length > 0" class="item item-divider">Posts</div>
           <div  ng-repeat="post in jobsPost" class="item">
             <div class="class">
-              <h2>Title: {{post.title}}</h2>
-              <h4>User: {{post.postedBy[0].username}}</h4>
-              <p class="item-detail">Details: {{post.description}}</p>
+              <h2>{{post.title}}</h2>
+              <h4>{{post.postedBy.username}}</h4>
+              <p class="item-detail">{{post.description}}</p>
               <span ng-if="post.category" class="job-tag">{{post.category}}</span>
               <span ng-if="post.cost" class="job-tag">{{post.cost | currency}}</span>
               <span ng-if="post.duration" class="job-tag">{{post.duration}} hour(s)</span>

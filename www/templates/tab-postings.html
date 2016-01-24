@@ -47,7 +47,7 @@
       <ion-slide>
         <div class="list">
           <div ng-if="myJobsPost.length > 0" class="item item-divider">My Posts</div>
-          <div ng-repeat="post in myJobsPost" class="item">
+          <div ng-click="postingDetail(post)" ng-repeat="post in myJobsPost" class="item">
             <div class="class">
               <h2>{{post.title}}</h2>
               <p class="item-detail">{{post.description}}</p>
@@ -57,7 +57,7 @@
             </div>
           </div>
           <div ng-if="jobsPost.length > 0" class="item item-divider">Posts</div>
-          <div  ng-repeat="post in jobsPost" class="item">
+          <div ng-click="postingDetail(post)"  ng-repeat="post in jobsPost" class="item">
             <div class="class">
               <h2>{{post.title}}</h2>
               <h4>{{post.postedBy.username}}</h4>

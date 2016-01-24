@@ -15,7 +15,6 @@ angular.module('services').service(
       query.find({
         success: function(results) {
           console.log("success");
-          console.log(results);
           callback({success: true, jobs: results});
         },
         error: function(error) {
@@ -38,7 +37,6 @@ angular.module('services').service(
       query.find({
         success: function(results) {
           console.log("success");
-          console.log(results);
           callback({success:true, jobs: results});
         },
         error: function(error) {

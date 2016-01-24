@@ -1,68 +1,33 @@
-<ion-view view-title="Postings">
-  <ion-nav-buttons side="secondary">
-    <i class="button icon-left button-clear"
-       ng-click="secondaryButtonAction()"> {{secondaryButtonTitle}}</i>
-  </ion-nav-buttons>
-     <div class="tabs-striped tabs-top tabs-color-calm">
-    <div class="tabs scroll-tabs">
-      <a class="tab-item" ng-class="currentTab == 0? 'active' : ' ' " href="#" ng-click="switchSlide(0)">
-        Jobber
-      </a>
-      <a class="tab-item" ng-class="currentTab == 1? 'active' : ' ' "  g-class="currentTab == 1? 'active' : ' ' " href="#" ng-click="switchSlide(1)">
-        Jobbee
-      </a>
+<ion-view view-title="Details">
+  <ion-content ng-init="init()">
+    <div class="list">
 
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Title</span>
+        <input type="text" ng-model="post.title" placeholder="Give a title to your post">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Details</span>
+        <input type="text" ng-model="post.detail" placeholder="Give some details about your post">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Category</span>
+        <input type="text" ng-model="post.tag" placeholder="Give job a category">
+      </label>
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Location</span>
+        <input type="text" ng-model="post.location" placeholder="Give job a category">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Hourly Rate($)</span>
+        <input type="number" ng-model="post.cost">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Duration(h)</span>
+        <input type="number" ng-model="post.duration">
+      </label>
     </div>
-  </div>
-  <ion-content class="tab-content" ng-init="init()">
-      <div class="under-tab-content">
-    <ion-slide-box show-pager="false" on-slide-changed="slideChange($index)">
-      <ion-slide>
-        <div ng-repeat="post in jobberPosts" class="list card">
-          <div class="item item-avatar">
-            <img src="{{post.profilePicture}}">
-            <h2>{{post.firstName}} {{post.lastName}}</h2>
-            <span ng-repeat="tag in post.tags" class="job-tag">{{tag}}</span>
-          </div>
-          <div class="item">
-            <p class="item-detail">
-              {{post.detail}}
-            </p>
-            <p>
-              <span ng-repeat="i in getNumber(post.rating) track by $index"
-                    class="ion-star energized icon-right"></span>
-              <span>{{post.reviews}} reviews</span>
-            </p>
-          </div>
-        </div>
-      </ion-slide>
-      <ion-slide>
-        <div class="list">
-          <div ng-if="myJobsPost.length > 0" class="item item-divider">My Posts</div>
-          <div ng-repeat="post in myJobsPost" class="item">
-            <div class="class">
-              <h2>{{post.title}}</h2>
-              <p class="item-detail">{{post.description}}</p>
-              <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-              <span ng-if="post.cost" class="job-tag">{{post.cost | currency}}</span>
-              <span ng-if="post.duration" class="job-tag">{{post.duration}} hour(s)</span>
-            </div>
-          </div>
-          <div ng-if="jobsPost.length > 0" class="item item-divider">Posts</div>
-          <div  ng-repeat="post in jobsPost" class="item">
-            <div class="class">
-              <h2>{{post.title}}</h2>
-              <h4>{{post.postedBy.username}}</h4>
-              <p class="item-detail">{{post.description}}</p>
-              <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-              <span ng-if="post.cost" class="job-tag">{{post.cost | currency}}</span>
-              <span ng-if="post.duration" class="job-tag">{{post.duration}} hour(s)</span>
-            </div>
-          </div>
-        </div>
 
-      </ion-slide>
-    </ion-slide-box>
-      </div>
+    <button class="button button-calm button-block" ng-click="updateJob()">Update Job</button>
   </ion-content>
 </ion-view>

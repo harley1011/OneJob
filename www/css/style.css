@@ -107,3 +107,9 @@ p.rname {
     display: inline;
     margin-right: 1px;
 }
+
+.msg-timestamp {
+    position: absolute;
+    top: 10px;
+    margin-left: 204px !important;
+}

@@ -37,7 +37,7 @@ body {
 }
 
 .profile-content {
-    margin-top: 43px;   
+/*    margin-top: 43px;   */
     padding: 10px;
     color: #444;
 }
@@ -66,4 +66,18 @@ body {
 
 a.tab-item {
     font-weight: 500;   
+}
+
+.ratings {
+/*    border: 1px solid black;*/
+    padding: 0 !important;
+}
+
+.ratings > .col {
+    text-align: center; 
+/*    border: 1px solid red;*/
+}
+
+p.rname {
+    margin: -2px 0 !important;   
 }

@@ -15,7 +15,7 @@ angular.module('controllers')
       jobService.postJob($scope.post.title, $scope.post.detail,
         $scope.post.cost, $scope.post.duration, $scope.post.location,
         $scope.post.tag, function(result){
-        console.log(JSON.parse(JSON.stringfy(result)));
+        console.log(JSON.parse(JSON.stringify(result)));
           $rootScope.$broadcast
         $ionicHistory.goBack(-1);
       })

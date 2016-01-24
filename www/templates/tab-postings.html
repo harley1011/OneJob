@@ -46,8 +46,23 @@
       </ion-slide>
       <ion-slide>
         <div class="list">
-          <div ng-if="myJobsPost.length > 0" class="item item-divider">My Posts</div>
-          <div ng-click="userPostingDetail(post)" ng-repeat="post in myJobsPost" class="item">
+          <div ng-if="myJobsPost.length > 0" class="item item-divider">My Job Posts</div>
+          <div ng-click="userPostingDetail(post)"  ng-repeat="post in myJobsPost" class="item">
+            <div class="class row">
+              <div class="col col-67">
+                <h2 class="job-title">{{post.title}}</h2>
+
+                <p class="item-detail">For about {{post.duration}} hour(s)</p>
+                <span ng-if="post.category" class="job-tag">{{post.category}}</span>
+
+              </div>
+
+              <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency}}</div>
+            </div>
+          </div>
+        </div>
+          <div ng-if="hiredJobs.length > 0" class="item item-divider">Hired Jobs</div>
+          <div ng-click="userHiredJobDetail(post)" ng-repeat="post in hiredJobs" class="item">
             <div class="class">
               <h2>{{post.title}}</h2>
               <p class="item-detail">{{post.description}}</p>
@@ -56,18 +71,18 @@
               <span ng-if="post.duration" class="job-tag">{{post.duration}} hour(s)</span>
             </div>
           </div>
-          <div ng-if="jobsPost.length > 0" class="item item-divider">Posts</div>
+          <div ng-if="jobsPost.length > 0" class="item item-divider">Jobs</div>
           <div ng-click="postingDetail(post)"  ng-repeat="post in jobsPost" class="item">
             <div class="class row">
                 <div class="col col-67">
                 <h2 class="job-title">{{post.title}}</h2>
-    
+
                   <p class="item-detail">For about {{post.duration}} hour(s)</p>
                   <span ng-if="post.category" class="job-tag">{{post.category}}</span>
-                  
+
                 </div>
-                
-                <div class="col col-33 item-cost" ng-if="post.cost"><p class="dollar-sign">$</p>{{post.cost}}</div>
+
+                <div class="col col-33 item-cost" ng-if="post.cost">{{post.cost | currency}}</div>
             </div>
             </div>
           </div>

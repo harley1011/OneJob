@@ -7,6 +7,7 @@ angular.module('services').service(
       var job = Parse.Object.extend("Job");
       var query = new Parse.Query(job);
       query.notEqualTo("postedBy", Parse.User.current());//not my jobs
+      query.equalTo("contractor", null);
       if (category != null) {query.equalTo ("category", category);}//match category
       if (location != null) {query.equalTo ("location", location);}//match location
       query.ascending("cost");//sort ascending
@@ -23,6 +24,19 @@ angular.module('services').service(
       });
     }
 
+    this.returnHiredJobs = function(limit, callback){
+      var query = new Parse.Query(Parse.Object.extend("Job"));
+
+      query.equalTo("jobs", Parse.User.current());
+      query.include("postedBy");
+      query.find({success: function(results){
+          callback({success: true, posts: results});
+      },
+      error: function(error){
+        console.log("Error: " + error.code + " " + error.message);
+      }})
+    }
+
     this.returnMyJobs = function(limit, category, callback) {
 
       //Return all my listed jobs on the platform
@@ -34,6 +48,7 @@ angular.module('services').service(
       }
       query.ascending("cost");//sort ascending
       query.limit (limit);//limit the number of rows returned
+      query.include("contractor");
       query.find({
         success: function(results) {
           console.log("success");

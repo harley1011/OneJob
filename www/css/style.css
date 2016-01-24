@@ -2,7 +2,7 @@
 @font-face {
     font-family: 'Lato';
     src: url("https://fonts.googleapis.com/css?family=Lato");
-    
+
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 .image{
     text-align: center;
-    background-color: rgba(255,255,255,0.3);   
+    background-color: rgba(255,255,255,0.3);
     padding-top: 70px;
 }
 
@@ -52,20 +52,20 @@ body {
     margin-top: 53px !important;
 }
 .name {
-    font-weight: bold;   
+    font-weight: bold;
 /*    color: #444;*/
 }
 
 .profile-name {
-    color: #444;   
+    color: #444;
 }
 
 .card {
-    margin-top: 0 !important;   
+    margin-top: 0 !important;
 }
 
 a.tab-item {
-    font-weight: 500;   
+    font-weight: 500;
 }
 
 .ratings {
@@ -75,17 +75,18 @@ a.tab-item {
 }
 
 .ratings > .col {
-    text-align: center; 
+    text-align: center;
 /*    border: 1px solid red;*/
 }
 
 p.rname {
-    margin: -2px 0 !important;   
+    margin: -2px 0 !important;
 }
 
 .job-title {
     font-size: 15pt !important;
     margin: 0 !important;
+    white-space: normal !important;
 }
 
 

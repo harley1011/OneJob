@@ -3,6 +3,32 @@ angular.module('services').service(
     Parse.initialize("WNMS58WrCeFRP5GDL43J9EPtPaJuMUd7AsygsGlH", "B3M0Urq3fJtw7BoeW0zztFK1uA243PpdugTyfKMK");
 
 
+    this.pickBid = function(bidId, callback){
+      var Bid = Parse.Object.extend("Bid");
+      var query = new Parse.Query(Bid);
+      query.include("job");
+      query.include("contractor");
+      query.equalTo("objectId", bidId);
+      query.first({
+        success: function(result){
+          console.log(result);
+          var contractor = result.get("contractor");
+          var job = result.get("job");
+          job.set("contractor", contractor);
+          result.save({
+            success: function(result){
+              console.log(result);
+              callback({success: true, contractor: result})
+            }, error: function(error){
+              console.log(error);
+            }
+          });
+        }, error : function(error){
+
+        }
+      })
+    }
+
     this.makeBid = function makeBid(jobID, bidValue, callback) {
       var Bid = Parse.Object.extend("Bid");
       var Job = Parse.Object.extend("Job");
@@ -61,7 +87,10 @@ angular.module('services').service(
     this.getBidHistory = function (limit, jobID, callback) {
       var Bid = Parse.Object.extend("Bid");
       var query = new Parse.Query(Bid);
-
+      var Job = Parse.Object.extend("Job");
+      var job = new Job();
+      job.id = jobID;
+      query.equalTo("job", job);
       query.limit(limit);
       query.ascending("cost");
       query.include("contractor");

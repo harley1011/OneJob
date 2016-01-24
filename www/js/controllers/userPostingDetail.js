@@ -10,14 +10,28 @@ angular.module('controllers')
 
     $scope.init = function(){
       $scope.post = tempStorageService.getTempStore();
-
+      if ($scope.post.contractor)
+      {
+        $scope.isThereContractor = true;
+      }
+      else
+      {
+        $scope.isThereContractor = false;
+      }
       bidService.getBidHistory(100, $scope.post.objectId, function(result){
+        if (result.data)
         $scope.bids = JSON.parse(JSON.stringify(result.data));
         console.log($scope.bids);
+
       });
 
     }
 
+    $scope.pickBid = function(bid){
+      bidService.pickBid(bid.objectId, function(result){
+        console.log(result);
+      })
+    }
     $scope.editFields = function(){
       $scope.edit = !$scope.edit;
     }

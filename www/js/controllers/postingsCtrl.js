@@ -5,6 +5,7 @@ angular.module('controllers')
     $scope.currentTab = 0;
     $scope.jobsPost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
     $scope.myJobsPost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
+    $scope.hiredJobs = [];
     $scope.jobberPosts = [
       {
         firstName: 'John',
@@ -30,6 +31,7 @@ angular.module('controllers')
       $state.go('tab.postingDetail');
     }
 
+
     $scope.userPostingDetail = function (post) {
       tempStorageService.setTempStore(post);
       $state.go('tab.userPostingDetail');
@@ -41,13 +43,27 @@ angular.module('controllers')
 
 
     $scope.init = function () {
+
       jobService.returnAllJobs(50, null, null, function (result) {
-        $scope.jobsPost = JSON.parse(JSON.stringify(result.jobs));
+        if (result.jobs)
+          $scope.jobsPost = JSON.parse(JSON.stringify(result.jobs));
+        else
+          $scope.jobsPost = [];
       })
 
       jobService.returnMyJobs(50, null, function (result) {
-        $scope.myJobsPost = JSON.parse(JSON.stringify(result.jobs));
+        if (result.jobs)
+          $scope.myJobsPost = JSON.parse(JSON.stringify(result.jobs));
+        else
+          $scope.myJobsPost = [];
+        console.log($scope.myJobsPost);
+      })
 
+      jobService.returnHiredJobs(50, function (result) {
+        if (result.jobs)
+          $scope.hiredJobs = JSON.parse(JSON.stringify(result.jobs));
+        else
+          $scope.hiredJobs = [];
       })
     }
     $scope.secondaryButtonAction = function () {

@@ -12,7 +12,7 @@ angular.module('services').service(
             },
             error: function(error) {
                 callback({success:false, user:user});
-                return true;
+                return false;
             }
         });
     }
@@ -27,7 +27,7 @@ angular.module('services').service(
             },
             error: function(error) {
                 callback({success:false, user:user});
-                return true;
+                return false;
             }
         });
     }
@@ -42,7 +42,7 @@ angular.module('services').service(
             },
             error: function(error) {
                 callback({success:false, user:user});
-                return true;
+                return false;
             }
         });
     }

@@ -42,10 +42,12 @@ angular.module('services').service(
           console.log("success");
           console.log(results);
           callback({success:true, data: results});
+            return true;
         },
         error: function(error) {
           console.log("Error: " + error.code + " " + error.message);
              callback ({success:false, message:error});
+            return false;
         }
       });
     }
@@ -67,33 +69,16 @@ angular.module('services').service(
         success: function () {
           console.log("success");
           callback({success: true, data: job});
+            return true;
         },
         error: function () {
           console.log("fail");
           callback({success: false, message: error});
+            return false;
         }
       });
     }
 
-    this.makeBid = function (contractorID, jobID, bidValue, callback) {
-      var Bid = Parse.Object.extend("Bid");
-      var bid = new Bid();
-
-      bid.set("contractorID", contractorID);
-      bid.set("bidValue", bidValue);
-      bid.set("jobID", jobID);
-
-      bid.save(null, {
-        success: function () {
-          console.log("success");
-            callback ({success:true});
-        },
-        error: function (error) {
-          console.log("fail");
-            callback ({success:false, message:error});
-        }
-      });
-    }
   })
 ;
 

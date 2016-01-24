@@ -27,12 +27,11 @@ angular.module('services')
     {
       registerUser.email = email;
     }
-
     this.getUser = function()
     {
       return registerUser;
     }
-
+    
     this.signUp = function (userName, email, firstName, lastName, password, callback) {
       var user = new Parse.User();
       user.set("email", email);

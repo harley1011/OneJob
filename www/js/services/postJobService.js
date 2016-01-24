@@ -3,7 +3,6 @@ angular.module('services').service(
     Parse.initialize("WNMS58WrCeFRP5GDL43J9EPtPaJuMUd7AsygsGlH", "B3M0Urq3fJtw7BoeW0zztFK1uA243PpdugTyfKMK");
 
     this.returnAllJobs = function(limit, category, location, callback) {
-
       //Return all listed jobs on the platform matching category and are not mine
       var job = Parse.Object.extend("Job");
       var query = new Parse.Query(job);
@@ -60,9 +59,9 @@ angular.module('services').service(
       job.set("duration", duration);
       job.set("location", location);
       job.set("category", category);
-      job.add("postedBy", Parse.User.current());
+      job.set("postedBy", Parse.User.current());
       job.save(null, {
-        success: function () {
+        success: function (result) {
           console.log("success");
           callback({success: true, post: result});
             return true;

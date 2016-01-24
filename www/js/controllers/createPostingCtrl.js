@@ -12,6 +12,8 @@ angular.module('controllers')
     }
 
     $scope.createPost = function (){
+      jobService.returnMyJobs();
+
       jobService.postJob($scope.post.title, $scope.title.detail, $scope.post.cost, $scope.post.duration, $scope.post.location, function(result){
         console.log(result);
       })

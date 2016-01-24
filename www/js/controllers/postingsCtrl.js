@@ -1,6 +1,6 @@
 angular.module('controllers')
 
-  .controller('postingsCtrl', function ($scope, $state, $ionicSlideBoxDelegate) {
+  .controller('postingsCtrl', function ($scope, $state, $ionicSlideBoxDelegate, jobService) {
 
     $scope.jobePost = [{title: 'Babysitting', detail: 'Need someone to watch two kids'}];
     $scope.jobberPosts = [
@@ -12,7 +12,9 @@ angular.module('controllers')
       $state.go('tab.categoryPostings');
     }
 
-
+    $scope.init = function(){
+      jobService.return
+    }
     $scope.secondaryButtonAction = function(){
       $state.go('tab.createPosting');
     }

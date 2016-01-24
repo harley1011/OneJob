@@ -23,6 +23,25 @@ angular.module('services').service(
       });
     }
 
+    this.returnMyJobs = function (limit, category, callback) {
+      //Return all my listed jobs on the platform
+      var job = Parse.Object.extend("Job");
+      var query = new Parse.Query(job);
+      query.equalTo ("postedBy", Parse.User.current());//my jobs
+      query.equalTo ("Category", category);//match category
+      query.ascending("cost");//sort ascending
+      query.limit (limit);//limit the number of rows returned
+      query.find({
+        success: function(results) {
+          console.log("success");
+          console.log(results);
+          callback({success:true, jobs: results});
+        },
+        error: function(error) {
+          alert("Error: " + error.code + " " + error.message);
+        }
+      });
+    }
     this.postJob = function (title, description, cost, duration, location, callback) {
 
       var Job = Parse.Object.extend("Job");

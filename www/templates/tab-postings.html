@@ -9,7 +9,7 @@
       <button ng-click="switchSlide(1)" class="button">Jobbee</button>
     </div>
   </ion-header-bar>
-  <ion-content>
+  <ion-content ng-init="init()">
     <ion-slide-box show-pager="false" on-slide-changed="slideChange($index)">
       <ion-slide>
         <div ng-repeat="post in jobberPosts" class="list card">
@@ -34,7 +34,7 @@
         <div class="list">
           <ion-list>
             <ion-item class="item-remove-animate"
-                      ng-repeat="post in jobePost" type="item-text-wrap">
+                      ng-repeat="post in jobsPost" type="item-text-wrap">
 
               <h2>{{post.title}}</h2>
 
